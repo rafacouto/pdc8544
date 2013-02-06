@@ -2,7 +2,7 @@
  * PDC8544.cpp
  *
  *  Created on: Jan 20, 2013
- *      Author: Rafa Couto http://github.com/rafacouto
+ *      Author: Rafa Couto http://bitbucket.org/rafacouto
  *     License: See LICENSE.txt
  */
 
@@ -169,7 +169,7 @@ void PDC8544::clear()
 
 void PDC8544::gotoXY(byte x, byte y) 
 {
-    if (x > LCDPDC8544_MAX_X || y > LCDPDC8544_MAX_Y) return;
+    if (x > PDC8544_MAX_X || y > PDC8544_MAX_Y) return;
     digitalWrite(this->pinDC, LOW);
     digitalWrite(this->pinSCE, LOW);
     shiftOut(this->pinSDIN, this->pinSCLK, MSBFIRST, CMD_SET_X | x);

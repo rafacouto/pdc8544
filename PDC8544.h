@@ -2,7 +2,7 @@
  * PDC8544.h
  *
  *  Created on: Jan 20, 2013
- *      Author: Rafa Couto http://github.com/rafacouto
+ *      Author: Rafa Couto http://bitbucket.org/rafacouto
  *     License: See LICENSE.txt
  */
 
@@ -11,8 +11,6 @@
 
 #include <Arduino.h>
 
-//#define PDC8544_WIDTH 48
-//#define PDC8544_HEIGHT 84
 #define PDC8544_MAX_X 83
 #define PDC8544_MAX_Y 5
 

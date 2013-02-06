@@ -1,5 +1,5 @@
 
-#include <LcdPdc8544.h>
+#include <PDC8544.h>
 
 // LCD connected to digital IO's 45,47,49,51,53
 PDC8544 lcd(45,47,49,51,53);
