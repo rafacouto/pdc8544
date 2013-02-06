@@ -30,12 +30,18 @@ public:
      * @parameter int pinSCLK Arduino digital IO where SCLK pin is connected.
      */
     PDC8544(int pinSCE, int pinRST, int pinDC, int pinSDIN, int pinSCLK);
+
+    /***** initialize *****/
     void init();
+    
+    /***** low level functions *****/
+    void sendCommand(byte command);
+    void sendData(byte data);
+    void sendData(const byte* data, int count);
 
     /***** draw functions *****/
     void clear();
     void gotoXY(byte x, byte y);
-    void usePalette(int colorIndex);
     void drawByte(byte data);
     void drawChar(char c);
     void drawString(const char* s);
@@ -43,11 +49,7 @@ public:
 
 private:
 
-    int pinSCE, pinRST, pinDC, pinSDIN, pinSCLK;
-
-    void sendCommand(byte command);
-    void sendData(byte data);
-    void sendData(const byte* data, int count);
+    int _pinSCE, _pinRST, _pinDC, _pinSDIN, _pinSCLK;
 
     // select functions
     void cmdFunctionSet(byte function);

@@ -41,27 +41,27 @@ PDC8544::PDC8544(
         int pinSCE, int pinRST, int pinDC, int pinSDIN, int pinSCLK)
 {
     // arduino connected digital IO's
-    this->pinSCE  = pinSCE;
-    this->pinRST  = pinRST;
-    this->pinDC   = pinDC;
-    this->pinSDIN = pinSDIN;
-    this->pinSCLK = pinSCLK;
+    this->_pinSCE  = pinSCE;
+    this->_pinRST  = pinRST;
+    this->_pinDC   = pinDC;
+    this->_pinSDIN = pinSDIN;
+    this->_pinSCLK = pinSCLK;
 }
 
 
 void PDC8544::init() 
 {
-    // set pins for output
-    pinMode(pinSCE,  OUTPUT);
-    pinMode(pinRST,  OUTPUT);
-    pinMode(pinDC,   OUTPUT);
-    pinMode(pinSDIN, OUTPUT);
-    pinMode(pinSCLK, OUTPUT);
+    // set _pins for output
+    pinMode(_pinSCE,  OUTPUT);
+    pinMode(_pinRST,  OUTPUT);
+    pinMode(_pinDC,   OUTPUT);
+    pinMode(_pinSDIN, OUTPUT);
+    pinMode(_pinSCLK, OUTPUT);
 
     // reset lcd
-    digitalWrite(pinRST, LOW);
+    digitalWrite(_pinRST, LOW);
     delay(20);
-    digitalWrite(pinRST, HIGH);
+    digitalWrite(_pinRST, HIGH);
 
     // initial commands
     cmdFunctionSet(FUNCTION_INSTRUCTIONS_EXTENDED);
@@ -76,30 +76,30 @@ void PDC8544::init()
 
 void PDC8544::sendCommand(byte command) 
 {
-    digitalWrite(this->pinDC, LOW);
-    digitalWrite(this->pinSCE, LOW);
-    shiftOut(this->pinSDIN, this->pinSCLK, MSBFIRST, command);
-    digitalWrite(this->pinSCE, HIGH);
+    digitalWrite(this->_pinDC, LOW);
+    digitalWrite(this->_pinSCE, LOW);
+    shiftOut(this->_pinSDIN, this->_pinSCLK, MSBFIRST, command);
+    digitalWrite(this->_pinSCE, HIGH);
 }
 
 
 void PDC8544::sendData(byte data) 
 {
-    digitalWrite(this->pinDC, HIGH);
-    digitalWrite(this->pinSCE, LOW);
-    shiftOut(this->pinSDIN, this->pinSCLK, MSBFIRST, data);
-    digitalWrite(this->pinSCE, HIGH);
+    digitalWrite(this->_pinDC, HIGH);
+    digitalWrite(this->_pinSCE, LOW);
+    shiftOut(this->_pinSDIN, this->_pinSCLK, MSBFIRST, data);
+    digitalWrite(this->_pinSCE, HIGH);
 }
 
 
 void PDC8544::sendData(const byte* data, int count) 
 {
-    digitalWrite(this->pinDC, HIGH);
-    digitalWrite(this->pinSCE, LOW);
+    digitalWrite(this->_pinDC, HIGH);
+    digitalWrite(this->_pinSCE, LOW);
     while (count-- > 0) {
-        shiftOut(this->pinSDIN, this->pinSCLK, MSBFIRST, *data++);
+        shiftOut(this->_pinSDIN, this->_pinSCLK, MSBFIRST, *data++);
     }
-    digitalWrite(this->pinSCE, HIGH);
+    digitalWrite(this->_pinSCE, HIGH);
 }
 
 
@@ -154,15 +154,15 @@ void PDC8544::cmdExtSetOperationVoltage(byte opv)
 
 void PDC8544::clear()
 {
-    digitalWrite(this->pinDC, HIGH);
-    digitalWrite(this->pinSCE, LOW);
+    digitalWrite(this->_pinDC, HIGH);
+    digitalWrite(this->_pinSCE, LOW);
 
     for (int b = MATRIX_SIZE; b > 0; b--)
     {
-        shiftOut(this->pinSDIN, this->pinSCLK, MSBFIRST, 0x00);
+        shiftOut(this->_pinSDIN, this->_pinSCLK, MSBFIRST, 0x00);
     }
 
-    digitalWrite(this->pinSCE, HIGH);
+    digitalWrite(this->_pinSCE, HIGH);
     gotoXY(0,0);
 }
 
@@ -170,11 +170,11 @@ void PDC8544::clear()
 void PDC8544::gotoXY(byte x, byte y) 
 {
     if (x > PDC8544_MAX_X || y > PDC8544_MAX_Y) return;
-    digitalWrite(this->pinDC, LOW);
-    digitalWrite(this->pinSCE, LOW);
-    shiftOut(this->pinSDIN, this->pinSCLK, MSBFIRST, CMD_SET_X | x);
-    shiftOut(this->pinSDIN, this->pinSCLK, MSBFIRST, CMD_SET_Y | y);
-    digitalWrite(this->pinSCE, HIGH);
+    digitalWrite(this->_pinDC, LOW);
+    digitalWrite(this->_pinSCE, LOW);
+    shiftOut(this->_pinSDIN, this->_pinSCLK, MSBFIRST, CMD_SET_X | x);
+    shiftOut(this->_pinSDIN, this->_pinSCLK, MSBFIRST, CMD_SET_Y | y);
+    digitalWrite(this->_pinSCE, HIGH);
 }
 
 
