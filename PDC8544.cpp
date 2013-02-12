@@ -204,9 +204,3 @@ void PDC8544::drawString(const char* s)
 }
 
 
-void PDC8544::drawMap(int x, int y, int width, int height, const byte* pixels) 
-{
-    // TODO
-}
-
-

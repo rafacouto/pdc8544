@@ -45,7 +45,6 @@ public:
     void drawByte(byte data);
     void drawChar(char c);
     void drawString(const char* s);
-    void drawMap(int x, int y, int width, int height, const byte* pixels);
 
 private:
 
