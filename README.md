@@ -67,6 +67,21 @@ text (chars or strings). Examine 'HelloWord' example provided with the
 library to see a working sketch that writes text in the LCD.
 
 
+Issues
+======
+
+Please, send issues with this library to the [issue tracker][2].
+
+[2]: https://bitbucket.org/rafacouto/arduino-pdc8544/issues
+
+Support is not guaranteed, but your voice is welcome.
+
+Are you developer? If you have any improvement to this code or a bug
+review, feel free to send [pull requests][3].
+
+[3]: https://bitbucket.org/rafacouto/arduino-pdc8544/pull-requests
+
+
 License
 =======
 
