@@ -13,10 +13,10 @@ The library provides helper methods to:
 Install the library
 ===================
 
-Here is a list of tagged versions of the library where the column on the 
+[Here][1] is a list of tagged versions of the library where the column on the 
 right contains several archive formats (zip, gz, bz2):
 
-https://bitbucket.org/rafacouto/arduino-pdc8544/downloads#tag-downloads
+[1]: https://bitbucket.org/rafacouto/arduino-pdc8544/downloads#tag-downloads
 
 Download it and extract the archive in the sketchbook/libraries of your 
 Arduino IDE. Rename the extracted folder to 'PDC8544' so that it will be 
