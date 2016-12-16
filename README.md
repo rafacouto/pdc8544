@@ -14,13 +14,13 @@ Install the library
 ===================
 
 [Here][1] is a list of tagged versions of the library where the column on the 
-right contains several archive formats (zip, gz, bz2):
+right contains several archive formats (zip, gz):
 
-[1]: https://bitbucket.org/rafacouto/arduino-pdc8544/downloads#tag-downloads
+[1]: https://github.com/rafacouto/pdc8544/releases
 
 Download it and extract the archive in the sketchbook/libraries of your 
 Arduino IDE. Rename the extracted folder to 'PDC8544' so that it will be 
-easier to identify from the IDE when you import the library.
+easier to identify from the IDE.
 
 Remember to restart the Arduino IDE in order to make the library available
 from the menus.
@@ -72,23 +72,25 @@ Issues
 
 Please, send issues with this library to the [issue tracker][2].
 
-[2]: https://bitbucket.org/rafacouto/arduino-pdc8544/issues
+[2]: https://github.com/rafacouto/pdc8544/issues
 
 Support is not guaranteed, but your voice is welcome.
 
 Are you developer? If you have any improvement to this code or a bug
-review, feel free to send [pull requests][3].
+review, please, send [pull requests][3].
 
-[3]: https://bitbucket.org/rafacouto/arduino-pdc8544/pull-requests
+[3]: https://github.com/rafacouto/pdc8544/pulls
 
 
 License
 =======
 
 This library is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
+it under the terms of the [GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License][4], or
 (at your option) any later version.
+
+[4]: https://raw.githubusercontent.com/rafacouto/pdc8544/master/LICENSE.txt
 
 This library is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -96,5 +98,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 Copyright 2012-2013 Rafa Couto
+
+
 
 
